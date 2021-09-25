@@ -1,0 +1,1 @@
+Cảm biến nhiệt độ sử dụng LM 35
