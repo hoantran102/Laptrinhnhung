@@ -1,4 +1,4 @@
-int sensorPin = A0;// chân analog kết nối tới cảm biến LM35
+int sensorPin = A0;// chân analog kết nối tới cảm biến TMP36
 void setup()
 {
   pinMode(12, OUTPUT);
