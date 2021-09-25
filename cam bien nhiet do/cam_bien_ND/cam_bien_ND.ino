@@ -3,6 +3,7 @@ void setup()
 {
   pinMode(12, OUTPUT);
   Serial.begin(96000);
+  //không cần phải pinMode cho các chân analog trước khi dùng
 }
 
 void loop()
