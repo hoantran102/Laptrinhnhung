@@ -1,3 +1,4 @@
+int sensorPin = A0;// chân analog kết nối tới cảm biến LM35
 void setup()
 {
   pinMode(12, OUTPUT);
@@ -7,7 +8,7 @@ void setup()
 void loop()
 {
   int x = analogRead(A0);
-    int t = map(x, 0 ,410 ,-50 , 150);
+  int t = map(x, 0 ,410 ,-50 , 150);
   if(t>36)
   digitalWrite(12, HIGH);
   else
