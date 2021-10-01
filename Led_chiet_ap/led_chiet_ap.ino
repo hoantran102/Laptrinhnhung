@@ -13,6 +13,6 @@ void loop()
   X=analogRead(A0);
   int brightness= map(X,0,1023,0,255);
   analogWrite(10,brightness);
-  Serial.println(X);
+  Serial.println(brightness);
   delay(200);
 }
