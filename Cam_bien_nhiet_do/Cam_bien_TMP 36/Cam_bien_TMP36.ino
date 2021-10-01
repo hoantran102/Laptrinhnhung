@@ -7,8 +7,7 @@ void setup()
 void loop()
 {
   int x = analogRead(A0);
-  float t = map(x, 0 , 410 , -50 , 150);
-  t=t+1;
+  float t = map(x, 20 ,358 ,-40 , 125);
   Serial.println(t);
   if (t > 36)
     digitalWrite(13, HIGH);
