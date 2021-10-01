@@ -3,7 +3,8 @@
 int X= 0;
 void setup()
 {
-  pinMode(13, OUTPUT);
+  Serial.begin(9600);
+  pinMode(10, OUTPUT);
   
 }
 
@@ -11,5 +12,7 @@ void loop()
 {
   X=analogRead(A0);
   int brightness= map(X,0,1023,0,255);
-  analogWrite(13,brightness);
+  analogWrite(10,brightness);
+  Serial.println(X);
+  delay(200);
 }
