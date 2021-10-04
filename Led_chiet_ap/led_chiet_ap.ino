@@ -1,5 +1,4 @@
-// C++ code
-//
+
 int X= 0;
 void setup()
 {
@@ -13,6 +12,6 @@ void loop()
   X=analogRead(A0);
   int brightness= map(X,0,1023,0,255);
   analogWrite(10,brightness);
-  Serial.println(brightness);
+  Serial.println(analogRead(A0));
   delay(200);
 }
