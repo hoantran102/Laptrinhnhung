@@ -1,26 +1,26 @@
-const int echoPin = 2; // Echo Pin of Ultrasonic Sensor
-const int pingPin = 3; // Trigger Pin of Ultrasonic Sensor
+const int Echo = 2; // Echo Pin of Ultrasonic Sensor
+const int Trig = 3; // Trigger Pin of Ultrasonic Sensor
 int led = 13  ;
 void setup()
 {
   pinMode(led, OUTPUT);
   Serial.begin(9600); // Starting Serial Communication
-  pinMode(pingPin, OUTPUT); // initialising pin 3 as output
-  pinMode(echoPin, INPUT); // initialising pin 2 as input
+  pinMode(Trig, OUTPUT); // initialising pin 3 as output
+  pinMode(Echo, INPUT); // initialising pin 2 as input
 }
 void loop()
 {
-  long duration, inches, cm;
+  float duration, inches, cm;
 
-  digitalWrite(pingPin, LOW);
+  digitalWrite(Trig, LOW);
   delayMicroseconds(2);
 
-  digitalWrite(pingPin, HIGH);
+  digitalWrite(Trig, HIGH);
   delayMicroseconds(10);
 
-  digitalWrite(pingPin, LOW);
+  digitalWrite(Trig, LOW);
 
-  duration = pulseIn(echoPin, HIGH); // using pulsin function to determine total time
+  duration = pulseIn(Echo, HIGH); // using pulsin function to determine total time
   inches = microsecondsToInches(duration); // calling method
   cm = microsecondsToCentimeters(duration); // calling method
 
@@ -29,20 +29,20 @@ void loop()
   Serial.print(cm);
   Serial.print("cm");
   Serial.println();
-  if (cm < 500)
+  if (inches < 10)
   {
     digitalWrite(led, HIGH);
   }
   else {
     digitalWrite(led, LOW);
   }
-  delay(100);
+  delay(1000);
 }
-long microsecondsToInches(long microseconds) // method to covert microsec to inches
+float microsecondsToInches(float x) // method to covert microsec to inches
 {
-  return microseconds / 74 / 2;
+  return x / 74.16 / 2;
 }
-long microsecondsToCentimeters(long microseconds) // method to covert microsec to centimeters
+float microsecondsToCentimeters(float x) // method to covert microsec to centimeters
 {
-  return microseconds / 29 / 2;
+  return x / 29.41 / 2;
 }
