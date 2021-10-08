@@ -21,9 +21,8 @@ void loop()
   digitalWrite(Trig, LOW);
 
   duration = pulseIn(Echo, HIGH); // using pulsin function to determine total time
-  inches = microsecondsToInches(duration); // calling method
-  cm = microsecondsToCentimeters(duration); // calling method
-
+  inches = duration *0.034*0.39/2; // calling method
+  cm = duration * 0.034 / 2; // calling method
   Serial.print(inches);
   Serial.print("in, ");
   Serial.print(cm);
@@ -37,12 +36,4 @@ void loop()
     digitalWrite(led, LOW);
   }
   delay(1000);
-}
-float microsecondsToInches(float x) // method to covert microsec to inches
-{
-  return x / 74.16 / 2;
-}
-float microsecondsToCentimeters(float x) // method to covert microsec to centimeters
-{
-  return x / 29.41 / 2;
 }
