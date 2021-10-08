@@ -1,0 +1,1 @@
+Bài này sử dụng led 7 seg bcd
