@@ -1,33 +1,24 @@
-int x=0;
-int y=0;
-int z=0;
-int red=0;
-int blue=0;
-int green=0;
+int x,y,z;
+const int red=11; // Chân Red 
+const int blue=10;// Chân Blue 
+const int green=9;// Chân Green
 void setup()
 {
   Serial.begin(9600);
-  pinMode(11, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(9, OUTPUT);
+  pinMode(red, OUTPUT);
+  pinMode(blue, OUTPUT);
+  pinMode(green, OUTPUT);
 }
-
 void loop()
 {
-  x=analogRead(A0);
-  y=analogRead(A1);
-  z=analogRead(A2);
-   red=map(x,0,1023,0,255);
-   blue=map(y,0,1023,0,255);
-   green=map(z,0,1023,0,255);
-  
-  
-  analogWrite(11, red);
-  analogWrite(10, blue);
-  analogWrite(9, green);
-  Serial.println(analogRead(A0));
-  Serial.println(analogRead(A1));
-  Serial.println(analogRead(A2));
-  
-  delay(1000);
+   x=map(analogRead(A0),0,1023,0,255);
+   y=map(analogRead(A1),0,1023,0,255);
+   z=map(analogRead(A2),0,1023,0,255);
+  analogWrite(red, x);
+  analogWrite(blue, y);
+  analogWrite(green, z);
+  Serial.println(x);
+  Serial.println(y);
+  Serial.println(z);
+  delay(100);
 }
