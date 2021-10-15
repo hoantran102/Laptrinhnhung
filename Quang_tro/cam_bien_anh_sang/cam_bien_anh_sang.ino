@@ -8,7 +8,7 @@ void loop() {
   int lux= analogRead(A0);
   Serial.println(analogRead(A0));
   
- if (lux < 902 )
+ if (lux < 70 )
  {
   digitalWrite(13,HIGH);
  }
