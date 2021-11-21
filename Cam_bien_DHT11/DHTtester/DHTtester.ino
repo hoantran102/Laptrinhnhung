@@ -11,13 +11,13 @@ void setup() {
   Serial.println(F("DHTxx test!"));
   pinMode(13,OUTPUT);
   pinMode(12,OUTPUT);
+  pinMode(11,OUTPUT);
   dht.begin();
 }
 
 void loop() {
   // Wait a few seconds between measurements.
   delay(2000);
-
   // Reading temperature or humidity takes about 250 milliseconds!
   // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
   float h = dht.readHumidity();
@@ -37,21 +37,22 @@ void loop() {
   // Compute heat index in Celsius (isFahreheit = false)
   float hic = dht.computeHeatIndex(t, h, false);
 
-  Serial.print(F("Humidity: "));
+  Serial.print("Humidity: ");
   Serial.print(h);
-  Serial.print(F("%  Temperature: "));
+  Serial.print("% Temperature: ");
   Serial.print(t);
-  Serial.print(F("°C "));
+  Serial.print("*C ");
   Serial.print(f);
-  Serial.print(F("°F  Heat index: "));
+  Serial.print("*F  Heat index: ");
   Serial.print(hic);
-  Serial.print(F("°C "));
+  Serial.print("*C ");
   Serial.print(hif);
-  Serial.println(F("°F"));
+  Serial.println("*F");
   if(t>30){
-    digitalWrite(13,HIGH);
+    digitalWrite(11,HIGH);
+    delay(100);
   }
-  else digitalWrite(13,LOW);
+  else digitalWrite(11,LOW);
   
    if(h<30){
     digitalWrite(12,HIGH);
