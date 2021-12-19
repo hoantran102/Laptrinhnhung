@@ -1,0 +1,25 @@
+--cpu Cortex-M4.fp
+"stm32lcd\startup_stm32f401xe.o"
+"stm32lcd\main.o"
+"stm32lcd\stm32f4xx_it.o"
+"stm32lcd\stm32f4xx_hal_msp.o"
+"stm32lcd\stm32f4xx_hal_tim.o"
+"stm32lcd\stm32f4xx_hal_tim_ex.o"
+"stm32lcd\stm32f4xx_hal_rcc.o"
+"stm32lcd\stm32f4xx_hal_rcc_ex.o"
+"stm32lcd\stm32f4xx_hal_flash.o"
+"stm32lcd\stm32f4xx_hal_flash_ex.o"
+"stm32lcd\stm32f4xx_hal_flash_ramfunc.o"
+"stm32lcd\stm32f4xx_hal_gpio.o"
+"stm32lcd\stm32f4xx_hal_dma_ex.o"
+"stm32lcd\stm32f4xx_hal_dma.o"
+"stm32lcd\stm32f4xx_hal_pwr.o"
+"stm32lcd\stm32f4xx_hal_pwr_ex.o"
+"stm32lcd\stm32f4xx_hal_cortex.o"
+"stm32lcd\stm32f4xx_hal.o"
+"stm32lcd\stm32f4xx_hal_exti.o"
+"stm32lcd\system_stm32f4xx.o"
+--strict --scatter "STM32lcd\STM32lcd.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "STM32lcd.map" -o STM32lcd\STM32lcd.axf
