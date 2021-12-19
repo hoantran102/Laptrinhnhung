@@ -1,0 +1,25 @@
+--cpu Cortex-M4.fp
+"nvic_stm32\startup_stm32f401xe.o"
+"nvic_stm32\main.o"
+"nvic_stm32\stm32f4xx_it.o"
+"nvic_stm32\stm32f4xx_hal_msp.o"
+"nvic_stm32\stm32f4xx_hal_tim.o"
+"nvic_stm32\stm32f4xx_hal_tim_ex.o"
+"nvic_stm32\stm32f4xx_hal_rcc.o"
+"nvic_stm32\stm32f4xx_hal_rcc_ex.o"
+"nvic_stm32\stm32f4xx_hal_flash.o"
+"nvic_stm32\stm32f4xx_hal_flash_ex.o"
+"nvic_stm32\stm32f4xx_hal_flash_ramfunc.o"
+"nvic_stm32\stm32f4xx_hal_gpio.o"
+"nvic_stm32\stm32f4xx_hal_dma_ex.o"
+"nvic_stm32\stm32f4xx_hal_dma.o"
+"nvic_stm32\stm32f4xx_hal_pwr.o"
+"nvic_stm32\stm32f4xx_hal_pwr_ex.o"
+"nvic_stm32\stm32f4xx_hal_cortex.o"
+"nvic_stm32\stm32f4xx_hal.o"
+"nvic_stm32\stm32f4xx_hal_exti.o"
+"nvic_stm32\system_stm32f4xx.o"
+--strict --scatter "NVIC_STM32\NVIC_STM32.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "NVIC_STM32.map" -o NVIC_STM32\NVIC_STM32.axf

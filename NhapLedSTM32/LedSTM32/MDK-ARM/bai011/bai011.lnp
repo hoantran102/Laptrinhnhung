@@ -1,0 +1,25 @@
+--cpu Cortex-M4.fp
+"bai011\startup_stm32f401xe.o"
+"bai011\main.o"
+"bai011\stm32f4xx_it.o"
+"bai011\stm32f4xx_hal_msp.o"
+"bai011\stm32f4xx_hal_tim.o"
+"bai011\stm32f4xx_hal_tim_ex.o"
+"bai011\stm32f4xx_hal_rcc.o"
+"bai011\stm32f4xx_hal_rcc_ex.o"
+"bai011\stm32f4xx_hal_flash.o"
+"bai011\stm32f4xx_hal_flash_ex.o"
+"bai011\stm32f4xx_hal_flash_ramfunc.o"
+"bai011\stm32f4xx_hal_gpio.o"
+"bai011\stm32f4xx_hal_dma_ex.o"
+"bai011\stm32f4xx_hal_dma.o"
+"bai011\stm32f4xx_hal_pwr.o"
+"bai011\stm32f4xx_hal_pwr_ex.o"
+"bai011\stm32f4xx_hal_cortex.o"
+"bai011\stm32f4xx_hal.o"
+"bai011\stm32f4xx_hal_exti.o"
+"bai011\system_stm32f4xx.o"
+--strict --scatter "bai011\bai011.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "bai011.map" -o bai011\bai011.axf
